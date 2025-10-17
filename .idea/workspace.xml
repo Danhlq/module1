@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d64324ed-37cf-4b68-98b0-d37297456655" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ss5/tạo bảng đơn giản.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss5/form lấy survey khách hàng.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss5/tạo bảng đơn giản.html" beforeDir="false" afterPath="$PROJECT_DIR$/ss5/tạo form đơn giản.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
       <workItem from="1760591695935" duration="3242000" />
       <workItem from="1760605905709" duration="495000" />
       <workItem from="1760608213119" duration="1500000" />
-      <workItem from="1760670476150" duration="4952000" />
+      <workItem from="1760670476150" duration="9676000" />
     </task>
     <servers />
   </component>
