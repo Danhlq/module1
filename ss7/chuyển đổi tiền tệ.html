@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+</head>
+<body>
+<h2>Currency Converter</h2>
+
+<table>
+    <tr>
+        <td><label for="amount">Amount</label></td>
+        <td><label for="fromCurrency">From Currency</label></td>
+        <td><label for="toCurrency">To Currency</label></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" id="amount" value="1">
+        </td>
+        <td>
+            <select id="fromCurrency">
+                <option value="VND">Vietnam</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="toCurrency">
+                <option value="USD">USD</option>
+                <option value="VND">Vietnam</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <button onclick="tinhDiem()">Convert</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <p id="result">Result: </p>
+        </td>
+    </tr>
+</table>
+
+<script>
+    function tinhDiem() {
+        let amount = parseFloat(document.getElementById("amount").value);
+        let from = document.getElementById("fromCurrency").value;
+        let to = document.getElementById("toCurrency").value;
+        let result = 0;
+
+        if (from === "VND" && to === "USD") {
+            result = amount / 23000;
+        } else if (from === "USD" && to === "VND") {
+            result = amount * 23000;
+        } else {
+            result = amount;
+        }
+
+        document.getElementById("result").innerText = "Result: " + result + " " + to;
+    }
+</script>
+</body>
+</html>
