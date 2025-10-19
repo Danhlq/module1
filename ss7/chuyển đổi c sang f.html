@@ -1,0 +1,32 @@
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi độ C sang độ F</title>
+</head>
+<body>
+<h2>Chuyển đổi độ C sang độ F</h2>
+
+<label>Nhập nhiệt độ (°C): </label>
+<input type="number" id="celsius" placeholder="Nhập độ C">
+<button onclick="convert()">Chuyển đổi</button>
+
+<p id="result"></p>
+
+<script>
+    function convert() {
+        // Lấy giá trị từ ô input
+        let c = document.getElementById("celsius").value;
+
+        // Chuyển đổi sang số
+        c = parseFloat(c);
+
+        // Tính độ F theo công thức
+        let f = (9/5) * c + 32;
+
+        // Hiển thị kết quả
+        document.getElementById("result").innerHTML =
+            c + "°C = " + f + "°F";
+    }
+</script>
+</body>
+</html>
