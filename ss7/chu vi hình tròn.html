@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chu vi hình tròn</title>
+</head>
+<body>
+<h2> chu vi hình tròn</h2>
+<label> nhập bán kính</label>
+<input id="bankinh" type="number">
+<button onclick="tinhchuvi()">tính chu vi</button>
+<p id="chuvi"></p>
+</body>
+<script>
+    function tinhchuvi() {
+        let bankinh = parseFloat(document.getElementById("bankinh").value);
+        let chuvi = 2*3.14*bankinh
+        document.getElementById("chuvi").innerText= "chu vi là: "  + chuvi
+    }
+</script>
+</html>
