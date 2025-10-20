@@ -6,16 +6,18 @@
 </head>
 <body>
 <h2> chu vi hình tròn</h2>
-<label> nhập bán kính</label>
-<input id="bankinh" type="number">
+<label for="ban-kinh">nhập bán kính</label>
+<input id="ban-kinh" type="number">
 <button onclick="tinhchuvi()">tính chu vi</button>
-<p id="chuvi"></p>
+<p id="chu-vi"></p>
 </body>
 <script>
     function tinhchuvi() {
-        let bankinh = parseFloat(document.getElementById("bankinh").value);
-        let chuvi = 2*3.14*bankinh
-        document.getElementById("chuvi").innerText= "chu vi là: "  + chuvi
+        // gọi giá trị khi người dùng nhập vào input
+        let banKinh = parseFloat(document.getElementById("ban-kinh").value);
+        // tính toán khi có giá trị đã gọi
+        let chuVi = 2*Math.PI*banKinh
+        document.getElementById("chu-vi").innerText= "chu vi là: "  + chuVi
     }
 </script>
 </html>

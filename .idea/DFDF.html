@@ -1,9 +1,14 @@
-<input id="name" type="text" placeholder="Nhập tên của bạn">
-<button onclick="hienthi()">Hiển thị</button>
-
-<script>
-    function hienthi() {
-        let ten = document.getElementById("name").value;
-        alert("họ và tên: " + ten);
-    }
-</script>
+let person = {
+firstName: "Jane",
+lastName: "Doe",
+get fullName() {
+return `${this.firstName} ${this.lastName}`;
+},
+set fullName(name) {
+[this.firstName, this.lastName] = name.split(' ');
+}
+};
+console.log(person.fullName); // Jane Doe
+person.fullName = "John Smith";
+console.log(person.firstName); // John
+console.log(person.lastName);  // Smith
