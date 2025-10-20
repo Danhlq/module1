@@ -1,14 +1,28 @@
-let person = {
-firstName: "Jane",
-lastName: "Doe",
-get fullName() {
-return `${this.firstName} ${this.lastName}`;
-},
-set fullName(name) {
-[this.firstName, this.lastName] = name.split(' ');
-}
-};
-console.log(person.fullName); // Jane Doe
-person.fullName = "John Smith";
-console.log(person.firstName); // John
-console.log(person.lastName);  // Smith
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Khai báo biến</title>
+</head>
+<body>
+<button onclick="khaibaobien()">Hiển thị biến</button>
+
+<script>
+    function khaibaobien() {
+        let i = 10;
+        let f = 20.5;
+        let b = true;
+        let s = 'Hà Nội';
+
+        document.write('i = ' + i);
+        document.write('<br/>');
+        document.write('f = ' + f);
+        document.write('<br/>');
+        document.write('b = ' + b);
+        document.write('<br/>');
+        document.write('s = ' + s);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Khai báo biến</title>
+</head>
+<body>
+<button onclick="khaibaobien()">Hiển thị biến</button>
+
+<script>
+    function khaibaobien() {
+        let i = 10;
+        let f = 20.5;
+        let b = true;
+        let s = 'Hà Nội';
+
+        document.write('i = ' + i);
+        document.write('<br/>');
+        document.write('f = ' + f);
+        document.write('<br/>');
+        document.write('b = ' + b);
+        document.write('<br/>');
+        document.write('s = ' + s);
+    }
+</script>
+</body>
+</html>
+
+
+<!--diện tich HCN-->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình chữ nhật</title>
+</head>
+<body>
+<h2>Tính diện tích hình chữ nhật</h2>
+
+<script>
+    // Khai báo hai biến
+    let width = 10;   // độ rộng
+    let height = 5;   // chiều cao
+
+    // Tính diện tích
+    let area = width * height;
+
+    // In ra màn hình
+    document.write("Chiều rộng: " + width);
+    document.write("<br/>Chiều cao: " + height);
+    document.write("<br/>Diện tích hình chữ nhật là: " + area);
+</script>
+</body>
+</html>
+
+
+<!--prompt()Bội Số-->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra bội số</title>
+</head>
+<body>
+<script>
+    // Nhập 2 số từ bàn phím
+    let a = parseFloat(prompt("Nhập số a:"));
+    let b = parseFloat(prompt("Nhập số b:"));
+    // Kiểm tra xem a có chia hết cho b không
+    if (b === 0) {
+        alert("tích là 0!");
+    } else if (a % b === 0) {
+        alert(a + " là bội số của " + b);
+    } else {
+        alert(a + " không phải là bội số của " + b);
+    }
+</script>
+</body>
+</html>
+
