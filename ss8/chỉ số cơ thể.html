@@ -10,12 +10,28 @@
 <button onclick="BMI()">tính BMI</button>
 <p id="BMI"></p>
 <script>
-    function BMI(){
+    function BMI() {
         // lấy giá trị cân nặng
         let weight = parseFloat(document.getElementById("weight").value);
         let height = parseFloat(document.getElementById("height").value);
-        let BMIvalue = weight / (height *height)
-        document.getElementById("BMI").innerText = "chỉ số BMI là:" + BMIvalue
+        let BMIvalue = weight / (height * height);
+        // let csct = "";
+
+        if (BMIvalue < 18.5) {
+            // csct = "gầy";
+            alert("gầy");
+        } else if (BMIvalue < 25) {
+            // csct = "bình thường";
+            alert("bt");
+        } else if (BMIvalue < 30.0) {
+            // csct = "thừa cân";
+            alert("khỏe");
+        } else {
+            // csct = "béo phì";
+            alert("béo")
+        }
+        // document.getElementById("BMI").innerHTML =
+        //     `Chỉ số BMI của bạn là <b>${BMIvalue.toFixed(2)}</b> (${csct})`;
     }
 
 </script>
