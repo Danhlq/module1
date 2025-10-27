@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp loại học lực</title>
+</head>
+<body>
+<h2>Xếp loại học lực học sinh</h2>
+<p id="ketqua"></p>
+
+<script>
+    // Nhập điểm từ người dùng
+    let kiemtra = parseFloat(prompt("Nhập điểm bài kiểm tra:"));
+    let giuaky = parseFloat(prompt("Nhập điểm thi giữa kỳ:"));
+    let cuoiky = parseFloat(prompt("Nhập điểm thi cuối kỳ:"));
+
+    // Tính điểm trung bình
+    let trungbinh = (kiemtra + giuaky + cuoiky) / 3;
+
+    // Xếp loại học lực
+    let xeploai = "";
+
+    if (trungbinh >= 8.0) {
+        xeploai = "Giỏi";
+    } else if (trungbinh >= 6.5) {
+        xeploai = "Khá";
+    } else if (trungbinh >= 5.0) {
+        xeploai = "Trung bình";
+    } else {
+        xeploai = "Yếu";
+    }
+
+    // Hiển thị kết quả ra trang web
+    document.getElementById("ketqua").innerText =
+        "Điểm trung bình: " + trungbinh.toFixed(2) + " - Xếp loại: " + xeploai;
+</script>
+</body>
+</html>

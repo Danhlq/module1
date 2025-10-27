@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số lớn nhất</title>
+</head>
+<body>
+<h2>Tìm giá trị lớn nhất trong 3 số</h2>
+<p id="ketqua"></p>
+
+<script>
+    // Nhập 3 số nguyên từ người dùng
+    let a = parseInt(prompt("Nhập số thứ nhất:"));
+    let b = parseInt(prompt("Nhập số thứ hai:"));
+    let c = parseInt(prompt("Nhập số thứ ba:"));
+
+    // Giả sử a là số lớn nhất ban đầu
+    let max = a;
+
+    // So sánh để tìm giá trị lớn nhất
+    if (b > max) {
+        max = b;
+    }
+    if (c > max) {
+        max = c;
+    }
+
+    // Hiển thị kết quả ra trang web
+    document.getElementById("ketqua").innerText = "Số lớn nhất là: " + max;
+</script>
+</body>
+</html>
