@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra a chia hết cho b không</title>
+</head>
+<body>
+<h2>kiểm tra chia hết</h2>
+<input type="number" id="num1">
+<input type="number" id="num2">
+<button onclick="kiem_tra()">kiểm tra chia hết</button>
+<p id="ketqua"></p>
+   <script>
+       function kiem_tra(){
+           let a=parseFloat(document.getElementById('num1').value);
+           let b=parseFloat(document.getElementById('num2').value);
+
+           if(b===0){
+               document.getElementById('ketqua').innerText="không thể chia cho 0";
+               return;
+           }
+
+           if( a % b === 0){
+               document.getElementById("ketqua").innerText= ` số ${a}  chia hết cho ${b}`;
+           }else {
+               document.getElementById("ketqua").innerText = `số ${a}  không chia hết cho ${b}`;
+           }
+
+       }
+   </script>
+</body>
+</html>
