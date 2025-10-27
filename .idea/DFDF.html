@@ -5,11 +5,34 @@
     <title>Câu lệnh if else</title>
 </head>
 <body>
-<h2>Chào theo thời gian</h2>
-<p id="result"></p>
-
 <script>
-  var= curday
+let userName = prompt("Who's there?", '');
+if (userName == 'Admin') {
+let pass = prompt('Password?', '');
+if (pass == 'TheMaster') {
+alert('Welcome!');
+} else if (pass == null) {
+alert('Canceled.');
+} else {
+alert('Wrong password');
+}
+} else if (userName == null) {
+alert('Canceled');
+} else {
+alert("I don't know you");
+}
 </script>
 </body>
 </html>
+
+
+
+if(BMIvalue <18.5){
+alert("underweight)
+}else if (BMIvalue < 25.0){
+alert("Normal")
+}else if (BMIvalue < 30.0){
+alert("overweight")
+}else {
+alert("obese")
+}

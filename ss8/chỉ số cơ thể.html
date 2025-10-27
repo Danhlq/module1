@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type ="number" id="weight" placeholder="weight">
+<input type ="number" id="height" placeholder="height">
+<button onclick="BMI()">tính BMI</button>
+<p id="BMI"></p>
+<script>
+    function BMI(){
+        // lấy giá trị cân nặng
+        let weight = parseFloat(document.getElementById("weight").value);
+        let height = parseFloat(document.getElementById("height").value);
+        let BMIvalue = weight / (height *height)
+        document.getElementById("BMI").innerText = "chỉ số BMI là:" + BMIvalue
+    }
+
+</script>
+</body>
+</html>
