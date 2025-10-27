@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>kiểm tra số ngày trong tháng</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2>kiểm tra số ngày trong tháng</h2>
+<input type="number" id="thang">
+<button onclick="tinh_Ngay()" id="tính_Ngày">tính số ngày</button>
+<p id="ketqua"></p>
+<script>
+    function tinh_Ngay() {
+
+    let tháng= parseFloat(document.getElementById("thang").value);
+    let days;
+    switch (tháng) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 9:
+        case 11:
+        case 12:
+            days = "31 ngày"
+            break;
+        case 2:
+            days = "28 hoặc 29 ngày"
+            break;
+        case 4:
+        case 6:
+        case 8:
+        case 10:
+            days = "30 ngày"
+            break;
+        default:
+            days="vuilòngnhậpđúngsốthángtừ1 - 12"
+            break;
+    }
+document.getElementById("ketqua").innerText = ` Tháng ${tháng} có ${days}`;
+    }
+</script>
+
+</body>
+</html>
