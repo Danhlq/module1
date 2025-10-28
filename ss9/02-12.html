@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi ngân hàng (lãi mẹ đẻ lãi con)</title>
+</head>
+<body>
+<h2>Tính lãi ngân hàng (lãi mẹ đẻ lãi con)</h2>
+
+<label for="tienGoc">Nhập số tiền ban đầu (VNĐ): </label>
+<input type="number" id="tienGoc" min="0" step="1000"><br><br>
+
+<label for="soThang">Nhập số tháng gửi: </label>
+<input type="number" id="soThang" min="1"><br><br>
+
+<label for="laiSuat">Nhập lãi suất hàng tháng (%): </label>
+<input type="number" id="laiSuat" step="0.01" min="0"><br><br>
+
+<button onclick="tinhLai()">Tính tiền lãi</button>
+
+<p id="ketqua"></p>
+
+<script>
+    function tinhLai() {
+        let P = parseFloat(document.getElementById("tienGoc").value);
+        let n = parseInt(document.getElementById("soThang").value);
+        let r = parseFloat(document.getElementById("laiSuat").value) / 100; // đổi sang dạng thập phân
+
+        if (isNaN(P) || isNaN(n) || isNaN(r) || P <= 0 || n <= 0 || r < 0) {
+            document.getElementById("ketqua").innerText = "⚠️ Vui lòng nhập đầy đủ và hợp lệ!";
+            return;
+        }
+
+        // Tính số tiền sau n tháng
+        let A = P * Math.pow((1 + r), n);
+        let L = A - P; // tiền lãi
+
+        document.getElementById("ketqua").innerText =
+            `💵 Số tiền ban đầu: ${P.toLocaleString()} VNĐ\n` +
+            `📅 Số tháng gửi: ${n}\n` +
+            `💹 Lãi suất hàng tháng: ${(r * 100).toFixed(2)}%\n\n` +
+            `💰 Tiền lãi thu được: ${L.toLocaleString(undefined, {maximumFractionDigits: 0})} VNĐ\n` +
+            `🏦 Tổng số tiền sau ${n} tháng: ${A.toLocaleString(undefined, {maximumFractionDigits: 0})} VNĐ`;
+    }
+</script>
+</body>
+</html>
