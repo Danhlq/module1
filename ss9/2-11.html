@@ -1,0 +1,84 @@
+ChatGPT said:
+
+Dưới đây là đề bài và chương trình tính thuế thu nhập cá nhân (TNCN) viết bằng HTML + JavaScript — rất phù hợp cho người mới học lập trình web 👇
+
+🧾 ĐỀ BÀI:
+
+Viết chương trình tính thuế thu nhập cá nhân (TNCN) phải nộp theo thu nhập hàng tháng.
+
+Yêu cầu:
+
+Nhập vào thu nhập hàng tháng (triệu đồng) của người lao động.
+
+Tính thuế thu nhập cá nhân theo biểu thuế lũy tiến từng phần:
+
+Bậc	Thu nhập chịu thuế/tháng (triệu đồng)	Thuế suất (%)
+1	Đến 5	5%
+2	Trên 5 đến 10	10%
+3	Trên 10 đến 18	15%
+4	Trên 18 đến 32	20%
+5	Trên 32 đến 52	25%
+6	Trên 52 đến 80	30%
+7	Trên 80	35%
+
+Hiển thị ra:
+
+Thu nhập ban đầu.
+
+Số thuế phải nộp.
+
+Thu nhập sau thuế.
+
+💻 CHƯƠNG TRÌNH:
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+<h2>Tính thuế thu nhập cá nhân (TNCN)</h2>
+
+<label for="thuNhap">Nhập thu nhập hàng tháng (triệu đồng): </label>
+<input type="number" id="thuNhap" min="0" step="0.1">
+<button onclick="tinhThue()">Tính thuế</button>
+
+<p id="ketqua"></p>
+
+<script>
+    function tinhThue() {
+        let thuNhap = parseFloat(document.getElementById("thuNhap").value);
+        let thue = 0;
+
+        if (isNaN(thuNhap) || thuNhap < 0) {
+            document.getElementById("ketqua").innerText = "⚠️ Vui lòng nhập thu nhập hợp lệ!";
+            return;
+        }
+
+        // Tính thuế theo biểu lũy tiến từng phần
+        if (thuNhap <= 5) {
+            thue = thuNhap * 0.05;
+        } else if (thuNhap <= 10) {
+            thue = 5 * 0.05 + (thuNhap - 5) * 0.10;
+        } else if (thuNhap <= 18) {
+            thue = 5 * 0.05 + 5 * 0.10 + (thuNhap - 10) * 0.15;
+        } else if (thuNhap <= 32) {
+            thue = 5 * 0.05 + 5 * 0.10 + 8 * 0.15 + (thuNhap - 18) * 0.20;
+        } else if (thuNhap <= 52) {
+            thue = 5 * 0.05 + 5 * 0.10 + 8 * 0.15 + 14 * 0.20 + (thuNhap - 32) * 0.25;
+        } else if (thuNhap <= 80) {
+            thue = 5 * 0.05 + 5 * 0.10 + 8 * 0.15 + 14 * 0.20 + 20 * 0.25 + (thuNhap - 52) * 0.30;
+        } else {
+            thue = 5 * 0.05 + 5 * 0.10 + 8 * 0.15 + 14 * 0.20 + 20 * 0.25 + 28 * 0.30 + (thuNhap - 80) * 0.35;
+        }
+
+        let thuNhapSauThue = thuNhap - thue;
+
+        document.getElementById("ketqua").innerText =
+            `💰 Thu nhập: ${thuNhap.toFixed(2)} triệu đồng\n` +
+            `💸 Thuế phải nộp: ${thue.toFixed(2)} triệu đồng\n` +
+            `✅ Thu nhập sau thuế: ${thuNhapSauThue.toFixed(2)} triệu đồng`;
+    }
+</script>
+</body>
+</html>
