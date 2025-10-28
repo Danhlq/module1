@@ -1,31 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title> tạo máy tính</title>
+    <title>Tạo máy tính đơn giản</title>
 </head>
 <body>
+<h2>Máy tính cơ bản</h2>
 
+<input id="num1" type="number" placeholder="Nhập số thứ nhất">
+<input id="num2" type="number" placeholder="Nhập số thứ hai"><br><br>
 
-    <input id="num1" type="number"></input>
+<button onclick="addition()">Cộng (+)</button>
+<button onclick="Subtraction()">Trừ (-)</button>
+<button onclick="Multiplication()">Nhân (×)</button>
+<button onclick="Division()">Chia (÷)</button>
 
-    <input id="num2" type="number"></input><br><br>
-    <button onClick=(addition)>addition(+)</button>
-    <button onClick=(Subtraction)>Subtraction(-)+</button>
-    <button onClick=(Multiplication)>ultiplication(x)</button>
-    <button onClick=(divition)>divition(/)</button>
-<p id="tính toán"></p>
+<p id="tinhToan"></p>
 
 <script>
-    function addition {
-        let num1= document.getElementById("num1").value;
-        let num2= document.getElementById("num2").value;
-        let tính toán= num1 + num2;
-        document.getElementById(tính toán).innerText num1+num2
-        
+    function addition() {
+        let a = parseFloat(document.getElementById("num1").value);
+        let b = parseFloat(document.getElementById("num2").value);
+        let ketqua = a + b;
+        document.getElementById("tinhToan").innerText = "Kết quả: " + ketqua;
     }
-<!--lấy giá trị từ input 1 và 2-->
 
+    function Subtraction() {
+        let a = parseFloat(document.getElementById("num1").value);
+        let b = parseFloat(document.getElementById("num2").value);
+        let ketqua = a - b;
+        document.getElementById("tinhToan").innerText = "Kết quả: " + ketqua;
+    }
+
+    function Multiplication() {
+        let a = parseFloat(document.getElementById("num1").value);
+        let b = parseFloat(document.getElementById("num2").value);
+        let ketqua = a * b;
+        document.getElementById("tinhToan").innerText = "Kết quả: " + ketqua;
+    }
+
+    function Division() {
+        let a = parseFloat(document.getElementById("num1").value);
+        let b = parseFloat(document.getElementById("num2").value);
+        if (b === 0) {
+            document.getElementById("tinhToan").innerText = "Không thể chia cho 0!";
+        } else {
+            let ketqua = a / b;
+            document.getElementById("tinhToan").innerText = "Kết quả: " + ketqua;
+        }
+    }
 </script>
 </body>
 </html>

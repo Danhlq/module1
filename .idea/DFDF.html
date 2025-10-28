@@ -1,102 +1,26 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tính diện tích hình vuông</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        h2 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .container {
-            background-color: white;
-            padding: 30px 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-
-        label {
-            font-size: 16px;
-        }
-
-        input {
-            width: 200px;
-            padding: 8px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background-color: #45a049;
-            transform: scale(1.05);
-        }
-
-        #ketqua {
-            margin-top: 20px;
-            font-weight: bold;
-            color: #222;
-            font-size: 18px;
-            background-color: #e3f2fd;
-            padding: 15px;
-            border-radius: 10px;
-            display: inline-block;
-            min-width: 250px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-<div class="container">
-    <h2>Tính diện tích hình vuông</h2>
-    <label for="canh">Nhập độ dài cạnh (cm):</label><br>
-    <input type="number" id="canh" placeholder="Nhập cạnh a"><br>
-    <button onclick="tinhDienTich()">Tính diện tích</button>
-
-    <p id="ketqua"></p>
-</div>
-
 <script>
-    function tinhDienTich() {
-        let a = parseFloat(document.getElementById("canh").value);
-
-        if (isNaN(a) || a <= 0) {
-            document.getElementById("ketqua").innerText = "⚠️ Vui lòng nhập cạnh hợp lệ!";
-            return;
+    function hinhchuynhat(n , m){
+        for(var i = 0; i <n;i++ ){
+            for(var j = 0;j < m;j++){
+                if(j == 0 || j == m - 1 || i == 0 || i == n-1){
+                    document.write("*")
+                }
+                else {
+                    document.write("&nbsp&nbsp");
+                }
+            }
+            document.write("<br>")
         }
-
-        let S = a * a;
-        document.getElementById("ketqua").innerText =
-            "Cạnh hình vuông: " + a + " cm\n" +
-            "Diện tích: " + S + " cm²";
     }
+    hinhchuynhat(3,9);
 </script>
 </body>
 </html>
