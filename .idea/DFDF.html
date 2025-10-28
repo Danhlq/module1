@@ -2,70 +2,101 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Câu lệnh if else</title>
-</head>
-<body>
-
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <title>Tính số ngày trong tháng</title>
-</head>
-<body>
-<h2>Tính số ngày trong tháng</h2>
-
-<label>Nhập số tháng (1–12): </label>
-<input type="number" id="month" min="1" max="12">
-<button onclick="tinhSoNgay()">Tính số ngày</button>
-
-<p id="result"></p>
-
-<script>
-    function tinhSoNgay() {
-        let month = parseInt(document.getElementById("month").value);
-        let days;
-
-        switch (month) {
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-            case 8:
-            case 10:
-            case 12:
-                days = "31 ngày";
-                break;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-                days = "30 ngày";
-                break;
-            case 2:
-                days = "28 hoặc 29 ngày";
-                break;
-            default:
-                days = "Vui lòng nhập số tháng từ 1 đến 12!";
-                break;
+    <title>Tính diện tích hình vuông</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
 
-        document.getElementById("result").innerHTML = `Tháng ${month} có ${days}`;
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        label {
+            font-size: 16px;
+        }
+
+        input {
+            width: 200px;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        #ketqua {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #222;
+            font-size: 18px;
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            min-width: 250px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Tính diện tích hình vuông</h2>
+    <label for="canh">Nhập độ dài cạnh (cm):</label><br>
+    <input type="number" id="canh" placeholder="Nhập cạnh a"><br>
+    <button onclick="tinhDienTich()">Tính diện tích</button>
+
+    <p id="ketqua"></p>
+</div>
+
+<script>
+    function tinhDienTich() {
+        let a = parseFloat(document.getElementById("canh").value);
+
+        if (isNaN(a) || a <= 0) {
+            document.getElementById("ketqua").innerText = "⚠️ Vui lòng nhập cạnh hợp lệ!";
+            return;
+        }
+
+        let S = a * a;
+        document.getElementById("ketqua").innerText =
+            "Cạnh hình vuông: " + a + " cm\n" +
+            "Diện tích: " + S + " cm²";
     }
 </script>
 </body>
 </html>
-</body>
-</html>
-
-
-
-if(BMIvalue <18.5){
-alert("underweight)
-}else if (BMIvalue < 25.0){
-alert("Normal")
-}else if (BMIvalue < 30.0){
-alert("overweight")
-}else {
-alert("obese")
-}
