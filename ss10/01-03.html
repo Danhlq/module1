@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610...
+<head>
+    <meta charset="UTF-8">
+    <title>20 số đầu tiên trong dãy Fibonacci</title>
+</head>
+<body>
+<h2>20 số đầu tiên trong dãy Fibonacci</h2>
+<p id="ketqua"></p>
+
+<script>
+    let a = 0;  // số đầu tiên
+    let b = 1;  // số thứ hai
+    let day = a + ", " + b; // bắt đầu dãy với 0, 1
+
+    for (let i = 2; i <= 20; i++) {
+        let c = a + b; // số tiếp theo
+        day += ", " + c; // nối vào chuỗi hiển thị
+        a = b;  // cập nhật giá trị a
+        b = c;  // cập nhật giá trị b
+    }
+
+    document.getElementById("ketqua").innerText = day;
+</script>
+</body>
+</html>

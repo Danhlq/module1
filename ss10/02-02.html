@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In tam giác vuông lệch phải</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+    let sosao = "";
+    let n = 5; // chiều cao tam giác
+
+    for (let i = 1; i <= n; i++) {         // dòng thứ i
+        // in khoảng trắng trước
+        for (let j = 1; j <= n - i; j++) {
+            sosao += "&nbsp;&nbsp;";       // mỗi khoảng trắng là 2 ký tự để cân đều
+        }
+        // in dấu *
+        for (let k = 1; k <= i; k++) {
+            sosao += "*";
+        }
+        sosao += "<br>";                   // xuống dòng
+    }
+
+    document.getElementById("demo").innerHTML = sosao;
+</script>
+
+</body>
+</html>
+
+    // let sosao = "";
+    // for (let i = 5; i >0; i--) {
+    //     for(let j = 1; j <= i; j++) {
+    //  sosao +="*";
+    //         }
+    //         sosao +="<br>";
+    //     }
+    // document.getElementById("demo").innerHTML = sosao;sosao
+    // let sosao = "" ;
+    //     for(let i = 1; i <=5; i++){
+    //         for(let j = 1; j <=i; j++){
+    //             sosao +="*"
+    //         }
+    //         sosao +="<br>"
+    //     }
+    // document.getElementById("demo").innerHTML = sosao;
+    // let sosao = "";
+    // for(let i = 5;i>0;i--){
+    //     for( let j = 1; j<=i;j++){
+    //         sosao+= "*";
+    //     } sosao += "<br>";
+    //     }
+    //     document.getElementById("demo").innerHTML = sosao;
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng 30 số chia hết cho 7 đầu tiên</title>
+</head>
+<body>
+<h2>Tính tổng 30 số chia hết cho 7 đầu tiên</h2>
+<p id="ketqua"></p>
+
+<script>
+    let tong = 0;
+    let dem = 0;
+
+    for (let i = 1; dem < 30; i++) {
+        if (i % 7 === 0) {
+            tong += i;
+            dem++;
+        }
+    }
+
+    document.getElementById("ketqua").innerText = "Tổng của 30 số chia hết cho 7 đầu tiên là: " + tong;
+</script>
+</body>
+</html>

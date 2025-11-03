@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tổng</title>
+</head>
+<body>
+<input id="nhapn">
+<button onclick="tinhTong()">tính tổng</button>
+<p id = "ketqua"> </p>
+<script>
+    function tinhTong(){
+        let n=document.getElementById("nhapn").value;
+        let tong = 0;
+        for(let i=1;i<=n;i++){
+            tong +=i
+        }
+        document.getElementById("ketqua").innerText = "tổng từ 1 đến  " + n + " là: " + tong;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Vòng lặp while</title>
+</head>
+<body>
+<script>
+    let total = 0;
+    let num = parseFloat(prompt("Nhập vào một số (nhập -1 để dừng):"));
+
+    while (num != -1) { // Lặp đến khi người dùng nhập -1
+        total += num; // Cộng dồn các số nhập
+        num = parseFloat(prompt("Nhập số tiếp theo (hoặc -1 để dừng):"));
+    }
+
+    document.write("Tổng các số bạn đã nhập là: " + total);
+</script>
+</body>
+</html>

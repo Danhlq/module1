@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+        body {padding-top:50px}
+    </style>
 </head>
+
 <body>
+<input type="text" id="txtValue"/>
+<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
+<input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+<div id="result"></div>
 <script>
-    function hinhchuynhat(n , m){
-        for(var i = 0; i <n;i++ ){
-            for(var j = 0;j < m;j++){
-                if(j == 0 || j == m - 1 || i == 0 || i == n-1){
-                    document.write("*")
-                }
-                else {
-                    document.write("&nbsp&nbsp");
-                }
-            }
-            document.write("<br>")
-        }
-    }
-    hinhchuynhat(3,9);
+    let hocsinh = ["anh a","anh b","anh c"];
+    let arr = [ "Toyota", "Subaru", "BMW" ];
+    alert(hocsinh[1]);
 </script>
 </body>
+
 </html>

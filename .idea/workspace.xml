@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e07904d-819a-4c5b-8d1c-bfca51a4f089" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ss10/01-03.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/01-04.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/01-05.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/01-06.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/02-01.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/02-02.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/02-04.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/02-06.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/do while nhập số 1-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/nhập số lớn hơn 0 và tính tổng.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/sinh ẩng cửu chương.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/sử dụng vòng lặp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/vong lặp while.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/vòng lặp 01-06.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/vòng lặp lồng nhau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10/vẽ hình.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/DFDF.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DFDF.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss3/tạo máy tính.html" beforeDir="false" afterPath="$PROJECT_DIR$/ss3/tạo máy tính.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +95,23 @@
       <workItem from="1761564444896" duration="10567000" />
       <workItem from="1761586791850" duration="4905000" />
       <workItem from="1761638110964" duration="3814000" />
-      <workItem from="1761655781749" duration="3324000" />
+      <workItem from="1761655781749" duration="4862000" />
+      <workItem from="1761737007806" duration="8592000" />
+      <workItem from="1761752663310" duration="819000" />
+      <workItem from="1761761344327" duration="2193000" />
+      <workItem from="1761764255250" duration="993000" />
+      <workItem from="1761765351905" duration="45000" />
+      <workItem from="1761835081369" duration="5901000" />
+      <workItem from="1761877826858" duration="4011000" />
+      <workItem from="1761881934640" duration="428000" />
+      <workItem from="1761882508408" duration="977000" />
+      <workItem from="1761884342997" duration="776000" />
+      <workItem from="1762162504425" duration="14000" />
+      <workItem from="1762162541935" duration="869000" />
+      <workItem from="1762163793430" duration="8000" />
+      <workItem from="1762169161468" duration="26000" />
+      <workItem from="1762169213846" duration="128000" />
+      <workItem from="1762169637674" duration="4051000" />
     </task>
     <servers />
   </component>

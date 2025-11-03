@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>in dãy fibonaci</title>
+</head>
+<body>
+<p id="vonglap"></p>
+<script>
+    let a = 0, b = 1
+    let day = a +"," + b;
+for( let i = 3;i<1000;i++){
+    let c = a+b
+    day+= "," + c
+    a=b;
+    b=c;
+}
+document.getElementById("vonglap").innerText= day
+</script>
+</body>
+</html>

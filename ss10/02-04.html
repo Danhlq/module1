@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tam giác vuông ngược trái</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    let hang = 5; // số hàng của tam giác
+    let sosao = "";
+
+    for (let i = hang; i >= 1; i--) {   // bắt đầu từ 5 xuống 1
+        // in khoảng trắng trước sao
+        for (let j = 1; j <= hang - i; j++) {
+            sosao += "&nbsp;&nbsp;";
+        }
+        // in sao
+        for (let k = 1; k <= i; k++) {
+            sosao += "*";
+        }
+        sosao += "<br>";
+    }
+
+    document.getElementById("demo").innerHTML = sosao;
+</script>
+</body>
+</html>

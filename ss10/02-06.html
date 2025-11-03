@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>in hinhf chuwx nhaatj</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    let hang = 6;
+    let cot = 15;
+    let sosao = "";
+    for (let i=1;i<= hang;i++){
+
+    for(let j=1; j<=cot;j++){
+        if(i===1 || i === hang || j===1 || j ===cot){
+            sosao+="*";
+        }else {sosao +="&nbsp;&nbsp;"}
+    }sosao += "<br>";
+    }
+document.getElementById("demo").innerHTML=sosao
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng của 20 số đầu tiên trong dãy fibonacci.</title>
+</head>
+<body>
+<p id="tổng"></p>
+<script>
+    let a = 0, b = 1;
+let tong = a + b;
+   let buoc;
+   // số tiếp theo
+for(let i=3;i<=20;i++)
+    // do đã có 0 và 1 là 2 so đầu
+{buoc = a+b;
+    tong+=buoc;
+    // cộng dồn số tiếp theo(bước)vào tổng
+    a=b;
+    // khai báo lại a
+    b=buoc;
+    // khai báo lại b
+}
+document.getElementById("tổng").innerText = "tổng của 20 số đầu tiên trong dãy fibonaci là :" + tong
+</script>
+</body>
+</html>
