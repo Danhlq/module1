@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="vi">
 <head>
-    <meta charset=utf-8 />
-    <title>JS Bin</title>
-    <style>
-        body {padding-top:50px}
-    </style>
+    <meta charset="UTF-8">
+    <title>Đếm từ 1 đến 100</title>
 </head>
-
 <body>
-<input type="text" id="txtValue"/>
-<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
-<input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
-<div id="result"></div>
+<h2>Đếm từ 1 đến 100</h2>
+<button onclick="dem()">Bắt đầu đếm</button>
+<p id="ketqua"></p>
+
 <script>
-    let hocsinh = ["anh a","anh b","anh c"];
-    let arr = [ "Toyota", "Subaru", "BMW" ];
-    alert(hocsinh[1]);
+    function dem() {
+        let hienThi = "";
+        for (let i = 1; i <= 100; i++) {
+            hienThi += i + "<br>";
+            if (i === 99) {
+                alert("Đã hoàn thành!");
+            }
+        }
+        document.getElementById("ketqua").innerHTML = hienThi;
+    }
 </script>
 </body>
-
 </html>
