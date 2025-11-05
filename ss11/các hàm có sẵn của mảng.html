@@ -7,14 +7,55 @@
 <body>
 <p id="ketqua"></p>
 <script>
-    let quequan = ["Quảng Trị","Triệu Phong","Triệu Hòa"]
-    let chuoi1 = quequan.join(",")
-    let chuoi2 = quequan.join("000")
+    // let quequan = ["Quảng Trị","Triệu Phong","Triệu Hòa"]
+    // let chuoi1 = quequan.join(",")
+    // let chuoi2 = quequan.join("000")
+    //
+    // console.log(chuoi1)
+    // console.log(chuoi2)
+    //
+    // document.getElementById("ketqua").innerHTML = chuoi1
 
-    console.log(chuoi1)
-    console.log(chuoi2)
 
-    document.getElementById("ketqua").innerHTML = chuoi1
+
+//     let chuoinhap = prompt("nhập số vào đây");
+//     let mang = chuoinhap.split("");
+//     let ketqua = [mang[0]];
+// for(let i = 1; i < mang.length; i++) {
+//     if(mang[i-1]%2==0 && mang[i]%2==0){
+// ketqua.push("-",mang[i])
+//     }else {ketqua.push(mang[i])
+// }}
+//     document.write("Kết quả: " + ketqua.join(""));
+
+
+
+    // Nhập chuỗi từ người dùng
+    let chuoi = prompt("Nhập vào một chuỗi:");
+
+    // Biến chứa kết quả
+    let ketqua = "";
+
+    // Duyệt từng ký tự
+    for (let i = 0; i < chuoi.length; i++) {
+        let kyTu = chuoi[i];
+
+        // Nếu là chữ thường → chuyển thành chữ hoa
+        if (kyTu >= "a" && kyTu <= "z") {
+            ketqua += kyTu.toUpperCase();
+        }
+        // Nếu là chữ hoa → chuyển thành chữ thường
+        else if (kyTu >= "A" && kyTu <= "Z") {
+            ketqua += kyTu.toLowerCase();
+        }
+        // Nếu không phải chữ → giữ nguyên
+        else {
+            ketqua += kyTu;
+        }
+    }
+
+    // Hiển thị kết quả
+    document.write("Chuỗi sau khi đổi: " + ketqua);
 </script>
 </body>
 </html>
