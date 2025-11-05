@@ -2,24 +2,21 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Đếm từ 1 đến 100</title>
+    <title>Nối các phần tử mảng thành chuỗi</title>
 </head>
 <body>
-<h2>Đếm từ 1 đến 100</h2>
-<button onclick="dem()">Bắt đầu đếm</button>
+<h2>Nối các phần tử trong mảng thành một chuỗi</h2>
 <p id="ketqua"></p>
 
 <script>
-    function dem() {
-        let hienThi = "";
-        for (let i = 1; i <= 100; i++) {
-            hienThi += i + "<br>";
-            if (i === 99) {
-                alert("Đã hoàn thành!");
-            }
-        }
-        document.getElementById("ketqua").innerHTML = hienThi;
-    }
+    // Tạo mảng ban đầu
+    let myColor = ["Red", "Green", "White", "Black"];
+
+    // Nối các phần tử trong mảng lại bằng dấu phẩy
+    let ketqua = myColor.join(",");
+
+    // Hiển thị kết quả ra màn hình
+    document.getElementById("ketqua").innerHTML = ketqua;
 </script>
 </body>
 </html>
