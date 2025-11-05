@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="ketqua"></p>
+<script>
+    let dayso = ""
+    for(let i =1;i<=100;i++){
+        if(i % 5 == 0 && i % 3 == 0){
+            dayso +="fizzbuzz<br>";
+        }else if(i % 3 ==0){
+            dayso +="fizz<br>";
+        }else if(i % 5 ==0){
+            dayso +="buzz<br>";
+        }else{
+            dayso += i +"<br>";
+        }
+    }
+    document.getElementById("ketqua").innerHTML = dayso;
+</script>
+</body>
+</html>
