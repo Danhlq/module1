@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo một mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</title>
+</head>
+<body>
+<script>
+    const songuyen = [2,8,15,35,78,16,3,74,56,6];
+    let dem = [];
+    for(let i = 0; i < songuyen.length; i++) {
+        if(songuyen[i] >= 10) {
+            dem++;
+
+        }
+    }
+    document.write("mảng: [" + songuyen.join(",") + "] <br>")
+    document.write("có Số phần tử lớn hơn hoặc bằng 10: " + dem)
+</script>
+</body>
+</html>

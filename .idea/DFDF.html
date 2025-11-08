@@ -2,21 +2,47 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Nối các phần tử mảng thành chuỗi</title>
+    <title>Form tìm kiếm đơn giản</title>
 </head>
 <body>
-<h2>Nối các phần tử trong mảng thành một chuỗi</h2>
+<h2>Từ điển Anh - Việt mini</h2>
+
+<form id="tuDienForm">
+    <input type="text" id="tuCanTim" placeholder="Nhập từ tiếng Anh...">
+    <button type="submit">Tìm kiếm</button>
+</form>
+
 <p id="ketqua"></p>
 
 <script>
-    // Tạo mảng ban đầu
-    let myColor = ["Red", "Green", "White", "Black"];
+    // Mảng từ tiếng Anh
+    const tuAnh = ["apple", "book", "cat", "dog", "house"];
+    // Mảng từ tiếng Việt tương ứng
+    const tuViet = ["táo", "sách", "mèo", "chó", "ngôi nhà"];
 
-    // Nối các phần tử trong mảng lại bằng dấu phẩy
-    let ketqua = myColor.join(",");
+    // Bắt sự kiện submit của form
+    document.getElementById("tuDienForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Ngăn reload trang
+        const tuNhap = document.getElementById("tuCanTim").value.trim().toLowerCase();
 
-    // Hiển thị kết quả ra màn hình
-    document.getElementById("ketqua").innerHTML = ketqua;
+        if (tuNhap === "") {
+            document.getElementById("ketqua").innerHTML = "Vui lòng nhập từ cần tìm!";
+            return;
+        }
+
+        // Tìm vị trí từ trong mảng
+        const index = tuAnh.indexOf(tuNhap);
+
+        if (index !== -1) {
+            // Nếu tìm thấy, hiển thị từ tiếng Việt tương ứng
+            document.getElementById("ketqua").innerHTML =
+                `Từ tiếng Việt tương ứng: <b>${tuViet[index]}</b>`;
+        } else {
+            // Nếu không tìm thấy
+            document.getElementById("ketqua").innerHTML = "Không tìm thấy!";
+        }
+    });
 </script>
+
 </body>
 </html>

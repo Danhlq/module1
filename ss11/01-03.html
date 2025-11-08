@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gia trị lớn nhất và TB</title>
+</head>
+<body>
+<script>
+    let mangsonguyen = [123,124,645,34,8,234,4767,90,567,235];
+    let max = mangsonguyen[0];
+    let tong = 0;
+    for(let i = 0; i < mangsonguyen.length; i++) {
+        if (mangsonguyen[i] > max){
+            max = mangsonguyen[i]
+        }tong += mangsonguyen[i]
+    } let trungbinh = tong/mangsonguyen.length;
+    document.write("so lớn nhất của mảng là : " + max);
+    document.write("trung bình là : " + trungbinh)
+</script>
+</body>
+</html>
