@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình đếm số nguyên âm trong một mảng.
+
+    </title>
+</head>
+<body>
+<script>
+    let mang = [12,-35,343,-132,-546,655,-6,-25]
+    let count = 0
+    for(let i = 0; i < mang.length; i++) {
+        if(mang[i] < 0){
+            count++
+        }
+    }
+
+    document.write("Mảng ban đầu: [" + mang.join(", ") + "]<br>");
+    document.write("Có " + count + " số nguyên âm trong mảng.");
+</script>
+</body>
+</html>

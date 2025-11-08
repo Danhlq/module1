@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v có thuộc mảng k</title>
+</head>
+<body>
+<script>
+    let mang = [12, -35, 343, -132, -546, 655, -6, -25];
+    let v = Number(prompt("Nhập giá trị v:"));
+    let found = false; // biến kiểm tra có tìm thấy hay không
+
+    for (let i = 0; i < mang.length; i++) {
+        if (mang[i] === v) {
+            found = true;
+            break; // tìm thấy thì dừng lại
+        }
+    }
+
+    if (found) {
+        document.write("Giá trị " + v + " có trong mảng.");
+    } else {
+        document.write("Giá trị " + v + " không có trong mảng.");
+    }
+</script>
+</body>
+</html>

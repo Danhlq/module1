@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+<h2>Đảo ngược mảng số nguyên</h2>
+<p id="ketqua"></p>
+
+<script>
+    // Nhập mảng từ người dùng, cách nhau bởi dấu phẩy
+    let nhap = prompt("Nhập các số, cách nhau bằng dấu phẩy (vd: 1,2,3,4,5): ");
+    let mang = nhap.split(",").map(Number); // chuyển thành mảng số
+
+    // Đảo ngược mảng
+    let daoNguoc = mang.reverse();
+
+    // Hiển thị kết quả
+    document.getElementById("ketqua").innerHTML = `
+        <b>Mảng ban đầu:</b> [${mang.reverse().join(", ")}] <br>
+        <b>Mảng sau khi đảo ngược:</b> [${daoNguoc.join(", ")}]
+    `;
+</script>
+</body>
+</html>
+✅ Cách 2: Tự viết vòng lặp đảo ngược
+html
+Copy code
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng thủ công</title>
+</head>
+<body>
+<h2>Đảo ngược mảng số nguyên (bằng vòng lặp)</h2>
+<p id="ketqua"></p>
+
+<script>
+    let nhap = prompt("Nhập các số, cách nhau bằng dấu phẩy (vd: 1,2,3,4,5): ");
+    let mang = nhap.split(",").map(Number);
+
+    let daoNguoc = [];
+    for (let i = mang.length - 1; i >= 0; i--) {
+        daoNguoc.push(mang[i]);
+    }
+
+    document.getElementById("ketqua").innerHTML = `
+        <b>Mảng ban đầu:</b> [${mang.join(", ")}] <br>
+        <b>Mảng sau khi đảo ngược:</b> [${daoNguoc.join(", ")}]
+    `;
+</script>
+</body>
+</html>
