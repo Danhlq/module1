@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo một mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</title>
+</head>
+<body>
+<h2>Đếm các số trong mảng lớn hơn hoặc bằng 10</h2>
+<p id="ketqua"></p>
+
+<script>
+    // Bước 1: Khởi tạo mảng
+    let mang = [34, 46, 2, 6, 87, 45, 7, 34, 89, 354];
+
+    // Bước 2: Biến đếm
+    let count = 0;
+    let cacSoLonHon10 = "";
+
+    // Bước 3: Duyệt mảng và kiểm tra
+    for (let i = 0; i < mang.length; i++) {
+        if (mang[i] >= 10) {
+            count++;
+            cacSoLonHon10 += mang[i] + " ";
+        }
+    }
+
+    // Bước 4: Hiển thị kết quả
+    let ketQua = `
+        <b>Mảng ban đầu:</b> [${mang.join(", ")}] <br><br>
+        <b>Các số lớn hơn hoặc bằng 10:</b> ${cacSoLonHon10} <br><br>
+        <b>Tổng cộng có:</b> ${count} số lớn hơn hoặc bằng 10.
+    `;
+
+    document.getElementById("ketqua").innerHTML = ketQua;
+    // let mang = [34,46,2,6,87,45,7,34,89,354]
+    // let count = 0
+    // for(let i = 0; i<mang.length; i++){
+    //     if(mang[i]>=10){
+    //         count++
+    //     }
+    // }
+    // console.log(count)
+    // document.write(count)
+
+</script>
+</body>
+</html>
