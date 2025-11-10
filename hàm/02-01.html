@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính bình phương</title>
+    <script>
+        function tinhBinhPhuong(number) {
+            return number * number;
+        }
+        function kiemtra() {
+            let x = parseFloat(document.getElementById("inputnumber").value);
+
+            let ketqua = tinhBinhPhuong(x);
+            alert("bình phương của" + x + "là: " + ketqua);
+            document.getElementById("ketqua").innerText = ketqua;
+        }
+    </script>
+</head>
+<body>
+<label for="inputnumber">nhập số</label>
+<input id = "inputnumber">
+<button onclick="kiemtra()">bình phương</button>
+<p> kết quả: <span id="ketqua">0</span></p>
+</body>
+</html>

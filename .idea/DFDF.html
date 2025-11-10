@@ -2,47 +2,47 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Form tìm kiếm đơn giản</title>
+    <title>Diện tích và chu vi hình tròn</title>
+    <script>
+        // Hàm tính diện tích hình tròn
+        function dienTichHinhTron(r) {
+            return Math.PI * r * r;
+        }
+
+        // Hàm tính chu vi hình tròn
+        function chuViHinhTron(r) {
+            return 2 * Math.PI * r;
+        }
+
+        // Hàm chính để tính và hiển thị kết quả
+        function tinhHinhTron() {
+            let r = parseFloat(document.getElementById("inputnumber").value);
+
+            if (isNaN(r) || r <= 0) {
+                alert("Vui lòng nhập bán kính hợp lệ (>0)!");
+                return;
+            }
+
+            let dientich = dienTichHinhTron(r);
+            let chuvi = chuViHinhTron(r);
+
+            alert("Diện tích hình tròn là: " + dientich.toFixed(2) +
+                "\nChu vi hình tròn là: " + chuvi.toFixed(2));
+
+            document.getElementById("ketquadientich").innerText = dientich.toFixed(2);
+            document.getElementById("ketquachuvi").innerText = chuvi.toFixed(2);
+        }
+    </script>
 </head>
 <body>
-<h2>Từ điển Anh - Việt mini</h2>
+<h2>Tính diện tích và chu vi hình tròn</h2>
 
-<form id="tuDienForm">
-    <input type="text" id="tuCanTim" placeholder="Nhập từ tiếng Anh...">
-    <button type="submit">Tìm kiếm</button>
-</form>
+<label for="inputnumber">Nhập bán kính:</label>
+<input id="inputnumber" type="number" step="any">
 
-<p id="ketqua"></p>
+<button onclick="tinhHinhTron()">Tính hình tròn</button>
 
-<script>
-    // Mảng từ tiếng Anh
-    const tuAnh = ["apple", "book", "cat", "dog", "house"];
-    // Mảng từ tiếng Việt tương ứng
-    const tuViet = ["táo", "sách", "mèo", "chó", "ngôi nhà"];
-
-    // Bắt sự kiện submit của form
-    document.getElementById("tuDienForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Ngăn reload trang
-        const tuNhap = document.getElementById("tuCanTim").value.trim().toLowerCase();
-
-        if (tuNhap === "") {
-            document.getElementById("ketqua").innerHTML = "Vui lòng nhập từ cần tìm!";
-            return;
-        }
-
-        // Tìm vị trí từ trong mảng
-        const index = tuAnh.indexOf(tuNhap);
-
-        if (index !== -1) {
-            // Nếu tìm thấy, hiển thị từ tiếng Việt tương ứng
-            document.getElementById("ketqua").innerHTML =
-                `Từ tiếng Việt tương ứng: <b>${tuViet[index]}</b>`;
-        } else {
-            // Nếu không tìm thấy
-            document.getElementById("ketqua").innerHTML = "Không tìm thấy!";
-        }
-    });
-</script>
-
+<p>Diện tích: <span id="ketquadientich">0</span></p>
+<p>Chu vi: <span id="ketquachuvi">0</span></p>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>feet và metter</title>
+</head>
+<body>
+<label for ="number">nhập giá trị</label>
+<input id="number" type="number">
+<button onclick="tofeet()">tofeet</button><br>
+<button onclick="tomeeter()">tofeet</button><br>
+
+<p id="kq"></p>
+<script>
+    function tofeet() {
+        let x = document.getElementById("number").value;
+        let y = 3.279 * x;
+        document.getElementById("kq").innerText = y
+    }
+    function tomeeter() {
+        let n = document.getElementById("number").value;
+        let z = 0.305 * n
+document.getElementById("kq").innerText = z
+    }
+</script>
+</body>
+</html>

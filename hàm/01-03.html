@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra và tính tổng</title>
+    <script>
+        // Hàm nhận hai tham số a và b
+        function checkAndSum(a, b) {
+            if (a > b) {
+                alert("Tham số thứ nhất lớn hơn tham số thứ hai!");
+                return null; // Không trả về gì nếu alert
+            } else {
+                return a + b; // Trả về tổng nếu a <= b
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Nhập hai số để kiểm tra</h2>
+
+<label for="num1">Số thứ nhất:</label>
+<input type="number" id="num1" value="0"><br><br>
+
+<label for="num2">Số thứ hai:</label>
+<input type="number" id="num2" value="0"><br><br>
+
+<button onclick="showResult()">Kiểm tra và tính tổng</button>
+
+<p>Kết quả: <span id="result"></span></p>
+
+<script>
+    function showResult() {
+        let a = parseFloat(document.getElementById("num1").value);
+        let b = parseFloat(document.getElementById("num2").value);
+
+        let res = checkAndSum(a, b); // Gọi hàm
+
+        if (res !== null) {
+            document.getElementById("result").innerText = res;
+        } else {
+            document.getElementById("result").innerText = ""; // Xóa kết quả nếu alert
+        }
+    }
+</script>
+</body>
+</html>

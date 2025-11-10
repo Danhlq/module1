@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e07904d-819a-4c5b-8d1c-bfca51a4f089" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ss11/01-02.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss11/01-03.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss11/mang 01-01.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss11/từ điển.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hàm/01-02.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hàm/01-03.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hàm/01-04.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hàm/02-01.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hàm/02-02.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hàm/feet và metter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hàm/giá trị nhỏ nhất của mảng.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hàm/hàm 01-01.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hàm/số nguyên tố.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/DFDF.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DFDF.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scrip.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scrip.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scrip.js" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scrip.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +108,9 @@
       <workItem from="1762169213846" duration="128000" />
       <workItem from="1762169637674" duration="7785000" />
       <workItem from="1762344367192" duration="8325000" />
+      <workItem from="1762587585234" duration="3870000" />
+      <workItem from="1762760848299" duration="3199000" />
+      <workItem from="1762773841417" duration="9074000" />
     </task>
     <servers />
   </component>

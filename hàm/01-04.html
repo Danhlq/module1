@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị giá trị result</title>
+    <script>
+        function addNumbers() {
+            let firstNum = 4;
+            let secondNum = 8;
+            let result = firstNum + secondNum;
+            return result;
+        }
+
+        function showResult() {
+            let result = 0;
+
+            // Hiển thị giá trị trước khi gọi hàm
+            alert("Giá trị của result trước khi gọi hàm: " + result);
+
+            // Gọi hàm và lưu kết quả
+            result = addNumbers();
+
+            // Hiển thị giá trị sau khi gọi hàm
+            alert("Giá trị của result sau khi gọi hàm: " + result);
+        }
+    </script>
+</head>
+<body>
+<h2>Kiểm tra giá trị của biến result</h2>
+<button onclick="showResult()">Nhấn để xem kết quả</button>
+</body>
+</html>

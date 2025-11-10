@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>diện tích và chu vi</title>
+</head>
+<script>
+    function dienTichHinhTron(r){
+        return Math.PI * r *r;
+    }
+    function chuViHinhTron(r) {
+        return Math.PI * r * 2;
+    }
+    function tinhHinhTron() {
+        let r = parseFloat(document.getElementById("inputnumber").value);
+        let dientich = dienTichHinhTron(r);
+        let chuvi = chuViHinhTron(r);
+        alert("diện tích hình tròn là: " + dientich.toFixed(2) +
+            "\n chu vi hình tròn là :" + chuvi.toFixed(2));
+        document.getElementById("ketquadientich").innerText = dientich.toFixed(2);
+        document.getElementById("ketquachuvi").innerText = chuvi.toFixed(2);
+        }
+
+
+</script>
+<body>
+<label for="inputnumber">nhập bán kính</label>
+<input id="inputnumber" type="number" step="any">
+
+<button onclick="tinhHinhTron()">tính hình tròn</button>
+<p>Diện tích: <span id="ketquadientich">0</span></p>
+<p>Chu vi: <span id="ketquachuvi">0</span></p>
+</body>
+</html>

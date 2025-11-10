@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Các số nguyên tố nhỏ hơn 10000</title>
+</head>
+<body>
+<h2>Các số nguyên tố nhỏ hơn 10.000</h2>
+<p id="ketqua"></p>
+
+<script>
+    // Hàm kiểm tra số nguyên tố
+    function isPrime(number) {
+        if (number < 2) return false; // Số nhỏ hơn 2 không phải số nguyên tố
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false; // Nếu chia hết => không phải số nguyên tố
+            }
+        }
+        return true; // Nếu không chia hết cho số nào => là số nguyên tố
+    }
+
+    let result = "";
+    for (let n = 2; n < 10000; n++) {
+        if (isPrime(n)) {
+            result += n + " "; // Nối các số nguyên tố vào chuỗi
+        }
+    }
+
+    document.getElementById("ketqua").innerHTML = result;
+</script>
+</body>
+</html>
