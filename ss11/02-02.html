@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>diện tích và chu vi hiình tròn</title>
+</head>
+<body>
+<script>
+    function tinhDienTich(r) {
+        return Math.PI * r*r;
+    }
+    function tinhChuVi(r) {
+        return 2*Math.PI * r;
+    }
+    let bankinh = parseFloat(prompt("nhập bán kính"))
+let dientich = tinhDienTich(bankinh);
+    let chuvi = tinhChuVi(bankinh);
+
+    document.write(`diện tích hình tròn có bán kính ${bankinh} là ${dientich.toFixed(2)} <br>`);
+    document.write(`chu vi hình tròn có bán kính ${bankinh} là ${chuvi.toFixed(2)}`)
+</script>
+</body>
+</html>
