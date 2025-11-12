@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> vẽ và tính hình chữ nhật</h2>
+<canvas id="myRectangle" width="400" height="200" style="border: 1px solid black"></canvas>
+<script>
+    class Rectangle {
+        constructor(x, y, height, width, color) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+        }
+// vẽ
+        draw(ctx) {
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+            ctx.closePath();
+        }
+
+        // tính diện tích
+        getArea() {
+            return this.height * this.width;
+        }
+
+        // tính chu vi
+        getPerimeter() {
+            return 2 * (this.height + this.width);
+        }
+    }
+    let canvas = document.getElementById("myRectangle");
+    let ctx = canvas.getContext("2d");
+    let rect = new Rectangle(10,50,100, 200, "blue");
+    rect.draw(ctx);
+    //     console.log("Chiều rộng:", rect.width);
+    // console.log("Chiều dài:", rect.height);
+    // console.log("Diện tích:", rect.getArea());
+    // console.log("Chu vi:", rect.getPerimeter());
+</script>
+</body>
+</html>

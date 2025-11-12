@@ -2,47 +2,57 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Diện tích và chu vi hình tròn</title>
-    <script>
-        // Hàm tính diện tích hình tròn
-        function dienTichHinhTron(r) {
-            return Math.PI * r * r;
-        }
-
-        // Hàm tính chu vi hình tròn
-        function chuViHinhTron(r) {
-            return 2 * Math.PI * r;
-        }
-
-        // Hàm chính để tính và hiển thị kết quả
-        function tinhHinhTron() {
-            let r = parseFloat(document.getElementById("inputnumber").value);
-
-            if (isNaN(r) || r <= 0) {
-                alert("Vui lòng nhập bán kính hợp lệ (>0)!");
-                return;
-            }
-
-            let dientich = dienTichHinhTron(r);
-            let chuvi = chuViHinhTron(r);
-
-            alert("Diện tích hình tròn là: " + dientich.toFixed(2) +
-                "\nChu vi hình tròn là: " + chuvi.toFixed(2));
-
-            document.getElementById("ketquadientich").innerText = dientich.toFixed(2);
-            document.getElementById("ketquachuvi").innerText = chuvi.toFixed(2);
-        }
-    </script>
+    <title>Vẽ hình chữ nhật - OOP JS</title>
 </head>
 <body>
-<h2>Tính diện tích và chu vi hình tròn</h2>
+<h2>Vẽ hình chữ nhật bằng class trong JavaScript</h2>
+<canvas id="myCanvas" width="400" height="300" style="border:1px solid black;"></canvas>
 
-<label for="inputnumber">Nhập bán kính:</label>
-<input id="inputnumber" type="number" step="any">
+<script>
+    // 🔶 1. Định nghĩa lớp Rectangle
+    class Rectangle {
+        constructor(x, y, width, height, color) {
+            this.x = x;             // Tọa độ góc trái trên
+            this.y = y;
+            this.width = width;     // Chiều rộng
+            this.height = height;   // Chiều dài (chiều cao)
+            this.color = color;
+        }
 
-<button onclick="tinhHinhTron()">Tính hình tròn</button>
+        // 🔹 Phương thức vẽ hình chữ nhật
+        draw(ctx) {
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+            ctx.closePath();
+        }
 
-<p>Diện tích: <span id="ketquadientich">0</span></p>
-<p>Chu vi: <span id="ketquachuvi">0</span></p>
+        // 🔹 Tính diện tích
+        getArea() {
+            return this.width * this.height;
+        }
+
+        // 🔹 Tính chu vi
+        getPerimeter() {
+            return 2 * (this.width + this.height);
+        }
+    }
+
+    // 🔶 2. Tạo đối tượng (instance) của lớp Rectangle
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+
+    // Tạo hình chữ nhật
+    let rect = new Rectangle(50, 50, 200, 100, "blue");
+
+    // Vẽ
+    rect.draw(ctx);
+
+    // 🔶 3. In thông tin ra console
+    console.log("Chiều rộng:", rect.width);
+    console.log("Chiều dài:", rect.height);
+    console.log("Diện tích:", rect.getArea());
+    console.log("Chu vi:", rect.getPerimeter());
+</script>
 </body>
 </html>

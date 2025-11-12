@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính gia thừa</title>
+    <script>
+        function tinhGiaiThua(n) {
+            let kq = 1;
+            for(i =1; i<=n;i++){
+                kq *= i;
+            }return kq;
+        }
+        document.getElementById("giaiThua").innerText = kq
+    </script>
+</head>
+<body>
+<p id="giaiThua"></p>
+<label for ="inputn">nhập n</label>
+<input type="number" id="inputn">
+<button onclick="tinhGiaiThua()">giai thừa</button>
+</body>
+</html>
