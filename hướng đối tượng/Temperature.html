@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="ketqua"></p>
+<script>
+    class Temperature{
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+        toFahrenheit() {
+            return this.celsius * 9 / 5 + 32;
+        }
+
+        // 🔸 Phương thức chuyển sang Kelvin
+        toKelvin() {
+            return this.celsius + 273.15;
+        }
+    }
+    // khởi tạo đối tượng(nhiệt độ 25 độ c)
+    let temp = new Temperature(25);
+    // gọi kết quả
+let f = temp.toFahrenheit();
+    let k = temp.toKelvin();
+    // in kết quả
+    document.getElementById("ketqua").innerHTML =
+        `Nhiệt độ: ${temp.celsius}°C <br><br>
+       = ${f.toFixed(2)}°F <br>
+       = ${k.toFixed(2)} K`;
+</script>
+</body>
+</html>

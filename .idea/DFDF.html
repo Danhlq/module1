@@ -2,57 +2,72 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Vẽ hình chữ nhật - OOP JS</title>
+    <title>Chuyển đổi nhiệt độ - OOP JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        #ketqua {
+            margin-top: 20px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-<h2>Vẽ hình chữ nhật bằng class trong JavaScript</h2>
-<canvas id="myCanvas" width="400" height="300" style="border:1px solid black;"></canvas>
+<h2>🌡️ Chuyển đổi nhiệt độ (OOP trong JavaScript)</h2>
+<label>Nhập nhiệt độ (°C): </label>
+<input type="number" id="nhapC" placeholder="Nhập °C" value="25">
+<button onclick="chuyenDoi()">Chuyển đổi</button>
+
+<div id="ketqua"></div>
 
 <script>
-    // 🔶 1. Định nghĩa lớp Rectangle
-    class Rectangle {
-        constructor(x, y, width, height, color) {
-            this.x = x;             // Tọa độ góc trái trên
-            this.y = y;
-            this.width = width;     // Chiều rộng
-            this.height = height;   // Chiều dài (chiều cao)
-            this.color = color;
+    // 🔹 1. Định nghĩa lớp Temperature
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
         }
 
-        // 🔹 Phương thức vẽ hình chữ nhật
-        draw(ctx) {
-            ctx.beginPath();
-            ctx.fillStyle = this.color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);
-            ctx.closePath();
+        toFahrenheit() {
+            return this.celsius * 9 / 5 + 32;
         }
 
-        // 🔹 Tính diện tích
-        getArea() {
-            return this.width * this.height;
-        }
-
-        // 🔹 Tính chu vi
-        getPerimeter() {
-            return 2 * (this.width + this.height);
+        toKelvin() {
+            return this.celsius + 273.15;
         }
     }
 
-    // 🔶 2. Tạo đối tượng (instance) của lớp Rectangle
-    let canvas = document.getElementById("myCanvas");
-    let ctx = canvas.getContext("2d");
+    // 🔹 2. Hàm xử lý khi nhấn nút
+    function chuyenDoi() {
+        let c = parseFloat(document.getElementById("nhapC").value);
 
-    // Tạo hình chữ nhật
-    let rect = new Rectangle(50, 50, 200, 100, "blue");
+        if (isNaN(c)) {
+            document.getElementById("ketqua").innerHTML = "⚠️ Vui lòng nhập số hợp lệ!";
+            return;
+        }
 
-    // Vẽ
-    rect.draw(ctx);
+        // Tạo đối tượng nhiệt độ
+        let temp = new Temperature(c);
 
-    // 🔶 3. In thông tin ra console
-    console.log("Chiều rộng:", rect.width);
-    console.log("Chiều dài:", rect.height);
-    console.log("Diện tích:", rect.getArea());
-    console.log("Chu vi:", rect.getPerimeter());
+        // Lấy kết quả
+        let f = temp.toFahrenheit();
+        let k = temp.toKelvin();
+
+        // Hiển thị ra màn hình
+        document.getElementById("ketqua").innerHTML = `
+        <p>${c}°C = ${f.toFixed(2)}°F = ${k.toFixed(2)} K</p>
+      `;
+    }
+
+    // 🔹 3. Gọi hàm lần đầu (mặc định 25°C)
+    chuyenDoi();
 </script>
 </body>
 </html>
