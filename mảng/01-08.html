@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mảng giảm dần</title>
+</head>
+<body>
+<script>
+    let mang = [25,36,145,152,15,24,78,165,155,124];
+
+
+    for(let i = 0;i < mang.length -1; i++) {
+        for (let j = i + 1; j < mang.length; j++) {
+            if (mang[j] > mang[i]) {
+                let temp = mang[i] ;
+                mang[i] = mang[j];
+                mang[j] = temp;
+            }
+        }
+    }
+    document.write("Mảng giảm dần:" + mang.join(", "));
+</script>
+</body>
+</html>
