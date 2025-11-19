@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tên chòm sao của các ngôi sao</title>
+</head>
+<body>
+<h2>Tra cứu chòm sao của một ngôi sao</h2>
+
+<script>
+    // Mảng các ngôi sao
+    const ngoiSao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+
+    // Mảng các chòm sao tương ứng
+    const chomSao = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    // Hàm tìm chòm sao theo tên ngôi sao
+    function timChomSao(tenSao) {
+        for (let i = 0; i < ngoiSao.length; i++) {
+            if (ngoiSao[i].toLowerCase() === tenSao.toLowerCase()) {
+                // So sánh không phân biệt chữ hoa/chữ thường
+                return chomSao[i];
+            }
+        }
+        return null; // Không tìm thấy
+    }
+
+    // Hộp thoại nhập tên ngôi sao
+    let tenNguoiDung = prompt("Nhập tên ngôi sao:");
+
+    // Gọi hàm tìm chòm sao
+    let ketQua = timChomSao(tenNguoiDung);
+
+    // Hiển thị kết quả
+    if (ketQua) {
+        document.write("Ngôi sao <b>" + tenNguoiDung + "</b> thuộc chòm sao <b>" + ketQua + "</b>.");
+    } else {
+        document.write("Không tìm thấy ngôi sao <b>" + tenNguoiDung + "</b> trong danh sách.");
+    }
+</script>
+</body>
+</html>

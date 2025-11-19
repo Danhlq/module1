@@ -2,12 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kiểm tra ký tự số:</title>
+    <title>số nhỏ nhất:</title>
 </head>
 <body>
+<input id = "nhap a" placeholder="nhập a">
+<input id = "nhap b" placeholder="nhập b">
+<input id = "nhap c" placeholder="nhập c">
+<button onclick="soNhoNhat()">tìm số nhỏ nhất</button>
+<p id="ketqua"></p>
 <script>
-    function f() {
-        
+    function soNhoNhat() {
+        let a = parseInt(document.getElementById("nhap a").value);
+        let b = parseInt(document.getElementById("nhap b").value);
+        let c = parseInt(document.getElementById("nhap c").value);
+        let nhonhat = a;
+        if(b<nhonhat){
+            nhonhat = b;
+        }
+        if(c<nhonhat){
+            nhonhat = c;
+        }
+        document.getElementById("ketqua").innerHTML = nhonhat;
     }
 </script>
 </body>
