@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>So sánh 2 chuỗi</title>
+</head>
+<body>
+<h2>Nhập 2 chuỗi:</h2>
+Chuỗi 1: <input type="text" id="chuoi1"><br><br>
+Chuỗi 2: <input type="text" id="chuoi2"><br><br>
+<button onclick="kiemTraChuoi()">Kiểm tra</button>
+<p id="ketqua"></p>
+
+<script>
+    function kiemTraChuoi() {
+        let c1 = document.getElementById("chuoi1").value;
+        let c2 = document.getElementById("chuoi2").value;
+
+        if (c1 === c2) {
+            document.getElementById("ketqua").innerText = "Hai chuỗi giống nhau.";
+        } else {
+            document.getElementById("ketqua").innerText = "Hai chuỗi khác nhau.";
+        }
+    }
+</script>
+</body>
+</html>

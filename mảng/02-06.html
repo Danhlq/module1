@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thay thế</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập một mảng ký tự, các ký tự cách nhau bởi dấu trừ '-' ví dụ a-b-c:");
+
+    // Chuyển chuỗi thành mảng ký tự
+    let mangKyTu = input.split('');
+
+    // Thay thế tất cả '-' bằng '_'
+    for (let i = 0; i < mangKyTu.length; i++) {
+        if (mangKyTu[i] === '-') {
+            mangKyTu[i] = '_';
+        }
+    }
+
+    // Hiển thị kết quả
+    console.log("Mảng sau khi thay thế: " + mangKyTu.join(''));
+</script>
+</body>
+</html>

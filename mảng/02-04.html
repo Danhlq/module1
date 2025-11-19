@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm số từ</title>
+</head>
+<body>
+<script>
+    // Nhập chuỗi từ người dùng
+    let chuoi = prompt("Nhập một chuỗi:");
+
+    // Loại bỏ khoảng trắng đầu/cuối, tách chuỗi thành mảng từ
+    let soTu = chuoi.trim() === "" ? 0 : chuoi.trim().split(/\s+/).length;
+
+    // Hiển thị kết quả
+    console.log("Số từ trong chuỗi là: " + soTu);
+</script>
+</body>
+</html>

@@ -1,126 +1,91 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Adam và Eva ăn táo</title>
+    <title>Adam and Eva</title>
 </head>
 <body>
 
-<h2>🔴 Mô phỏng Adam & Eva ăn táo</h2>
-
-<button onclick="startSimulation()">Bắt đầu ăn táo</button>
-
-<div id="log" style="margin-top:20px; font-size:18px;"></div>
-
 <script>
-    // ----------------------
-    // Lớp Apple
-    // ----------------------
-    class Apple {
-        constructor() {
-            this.weight = 10; // mặc định
-        }
-
-        getWeight() {
-            return this.weight;
-        }
-
-        decrease() {
-            if (this.weight > 0) this.weight--;
-        }
-    }
-
-
-    // ----------------------
-    // Lớp Human
-    // ----------------------
-    class Human {
-        constructor(name, gender, weight) {
-            this.name = name;
-            this.gender = gender;
+    class Apple{
+        constructor(weight) {
             this.weight = weight;
         }
-
-        speak(text) {
-            log(`${this.name}: ${text}`);
-        }
-
-        eat(apple) {
-            if (apple.getWeight() > 0) {
-                this.weight++;
-                apple.decrease();
-                log(`${this.name} ăn 1 miếng táo 🍎`);
-            } else {
-                log(`${this.name}: Táo hết rồi!`);
+        decrease(){
+            if(this.weight > 0){
+                this.weight -= 1;
             }
         }
-
-        checkApple(apple) {
-            log(`Táo còn lại: ${apple.getWeight()}`);
+        isEmpty(){
+            if(this.weight <= 0){
+                return true;
+            }
+            return false;
         }
-
-        info() {
-            log(`Tên: ${this.name} | Giới tính: ${this.gender} | Cân nặng: ${this.weight}`);
+        getWeightT(){
+            return this.weight;
+        }
+    }
+    class Human{
+        constructor(name, gender, weigh){
+            this.name = name;
+            this.gender = gender;
+            this.weigh = weigh;
+        }
+        isMale(){
+            return this.gender;
+        }
+        setGender(gender){
+            this.gender = gender;
+        }
+        checkApple(Apple){
+            if(apple.getWeightT() > 0){
+                return true;
+            }
+            return false;
+        }
+        eat(Apple){
+            if(this.checkApple(Apple)){
+                Apple.decrease();
+                this.weigh++;
+                console.log(this.name + " vừa ăn một miếng táo")
+            }else{
+                console.log("Táo đã hết, không thể ăn!");
+            }
+        }
+        say(str){
+            console.log(this.name + " nói " + str);
+        }
+        getName(){
+            return this.name;
+        }
+        setName(name){
+            this.name = name;
+        }
+        getWeigh(){
+            return this.weigh;
+        }
+        setWeigh(weigh){
+            this.weigh = weigh;
         }
     }
 
+    let apple = new Apple(10);
+    let adam = new Human("Adam", true, 65);
+    let eva = new Human("Eva", false, 45);
 
-    // ----------------------
-    // Hàm in ra màn hình web
-    // ----------------------
-    function log(msg) {
-        document.getElementById("log").innerHTML += msg + "<br>";
-    }
-
-
-    // ----------------------
-    // Chương trình chính
-    // ----------------------
-    function startSimulation() {
-
-        document.getElementById("log").innerHTML = ""; // reset màn hình
-
-        // Nhập dữ liệu từ người dùng
-        let adamName = prompt("Nhập tên của Adam:", "Adam");
-        let adamWeight = parseInt(prompt("Nhập cân nặng của Adam:", 60));
-
-        let evaName = prompt("Nhập tên của Eva:", "Eva");
-        let evaWeight = parseInt(prompt("Nhập cân nặng của Eva:", 50));
-
-        // Tạo đối tượng
-        let apple = new Apple();
-        let adam = new Human(adamName, "Nam", adamWeight);
-        let eva = new Human(evaName, "Nữ", evaWeight);
-
-        log("=== BẮT ĐẦU CÂU CHUYỆN ===");
-        adam.info();
-        eva.info();
-        log(`Khối lượng táo ban đầu: ${apple.getWeight()} đơn vị 🍎`);
-        log("<br>--- Adam và Eva bắt đầu ăn ---<br>");
-
-        let turn = 1;
-
-        while (apple.getWeight() > 0) {
-            log(`🔄 Lượt ăn ${turn}`);
-
-            adam.eat(apple);
-            adam.info();
-            adam.checkApple(apple);
-
-            if (apple.getWeight() <= 0) break;
-
+    adam.say("Xin chào Eva");
+    eva.say("Chào Adam!");
+    console.log("Cân nặng hiện tại của eva là: " + eva.getWeigh());
+    console.log("Cân nặng hiện tại của Adam là: " + adam.getWeigh());
+    while(!apple.isEmpty()){
+        adam.eat(apple);
+        if(!apple.isEmpty()){
             eva.eat(apple);
-            eva.info();
-            eva.checkApple(apple);
-
-            turn++;
-            log("<br>");
         }
-
-        log("<br>🍏 Táo đã hết! 💀");
-        log("=== KẾT THÚC ===");
     }
+    console.log("Cân nặng của eva là: " + eva.getWeigh());
+    console.log("Cân nặng của Adam là: " + adam.getWeigh());
 </script>
-
 </body>
 </html>
