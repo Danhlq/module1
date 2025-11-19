@@ -5,17 +5,18 @@
 </head>
 <body>
 <p>
-    <label>Fahrenheit</label>
-    <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
-           oninput="temperatureConverter(this.value)"
-           onchange="temperatureConverter(this.value)">
-</p>
-<p>Celsius: <span id="outputCelsius"></span></p>
 <script>
+    for(num1=0; num1<=3; num1++)
+    {
+        for(num2=0; num2<=2; num2++)
+        {
+            if(num1 == 5)
+            {
+                console.log('coder');
+            }
+        }
 
-    function temperatureConverter(valNum) {
-        valNum = parseFloat(valNum);
-        document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+        console.log('ninja');
     }
 
 </script>

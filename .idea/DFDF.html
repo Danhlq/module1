@@ -2,72 +2,125 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Chuyển đổi nhiệt độ - OOP JS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-        input, button {
-            padding: 8px;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        #ketqua {
-            margin-top: 20px;
-            font-weight: bold;
-            color: blue;
-        }
-    </style>
+    <title>Adam và Eva ăn táo</title>
 </head>
 <body>
-<h2>🌡️ Chuyển đổi nhiệt độ (OOP trong JavaScript)</h2>
-<label>Nhập nhiệt độ (°C): </label>
-<input type="number" id="nhapC" placeholder="Nhập °C" value="25">
-<button onclick="chuyenDoi()">Chuyển đổi</button>
 
-<div id="ketqua"></div>
+<h2>🔴 Mô phỏng Adam & Eva ăn táo</h2>
+
+<button onclick="startSimulation()">Bắt đầu ăn táo</button>
+
+<div id="log" style="margin-top:20px; font-size:18px;"></div>
 
 <script>
-    // 🔹 1. Định nghĩa lớp Temperature
-    class Temperature {
-        constructor(celsius) {
-            this.celsius = celsius;
+    // ----------------------
+    // Lớp Apple
+    // ----------------------
+    class Apple {
+        constructor() {
+            this.weight = 10; // mặc định
         }
 
-        toFahrenheit() {
-            return this.celsius * 9 / 5 + 32;
+        getWeight() {
+            return this.weight;
         }
 
-        toKelvin() {
-            return this.celsius + 273.15;
+        decrease() {
+            if (this.weight > 0) this.weight--;
         }
     }
 
-    // 🔹 2. Hàm xử lý khi nhấn nút
-    function chuyenDoi() {
-        let c = parseFloat(document.getElementById("nhapC").value);
 
-        if (isNaN(c)) {
-            document.getElementById("ketqua").innerHTML = "⚠️ Vui lòng nhập số hợp lệ!";
-            return;
+    // ----------------------
+    // Lớp Human
+    // ----------------------
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
         }
 
-        // Tạo đối tượng nhiệt độ
-        let temp = new Temperature(c);
+        speak(text) {
+            log(`${this.name}: ${text}`);
+        }
 
-        // Lấy kết quả
-        let f = temp.toFahrenheit();
-        let k = temp.toKelvin();
+        eat(apple) {
+            if (apple.getWeight() > 0) {
+                this.weight++;
+                apple.decrease();
+                log(`${this.name} ăn 1 miếng táo 🍎`);
+            } else {
+                log(`${this.name}: Táo hết rồi!`);
+            }
+        }
 
-        // Hiển thị ra màn hình
-        document.getElementById("ketqua").innerHTML = `
-        <p>${c}°C = ${f.toFixed(2)}°F = ${k.toFixed(2)} K</p>
-      `;
+        checkApple(apple) {
+            log(`Táo còn lại: ${apple.getWeight()}`);
+        }
+
+        info() {
+            log(`Tên: ${this.name} | Giới tính: ${this.gender} | Cân nặng: ${this.weight}`);
+        }
     }
 
-    // 🔹 3. Gọi hàm lần đầu (mặc định 25°C)
-    chuyenDoi();
+
+    // ----------------------
+    // Hàm in ra màn hình web
+    // ----------------------
+    function log(msg) {
+        document.getElementById("log").innerHTML += msg + "<br>";
+    }
+
+
+    // ----------------------
+    // Chương trình chính
+    // ----------------------
+    function startSimulation() {
+
+        document.getElementById("log").innerHTML = ""; // reset màn hình
+
+        // Nhập dữ liệu từ người dùng
+        let adamName = prompt("Nhập tên của Adam:", "Adam");
+        let adamWeight = parseInt(prompt("Nhập cân nặng của Adam:", 60));
+
+        let evaName = prompt("Nhập tên của Eva:", "Eva");
+        let evaWeight = parseInt(prompt("Nhập cân nặng của Eva:", 50));
+
+        // Tạo đối tượng
+        let apple = new Apple();
+        let adam = new Human(adamName, "Nam", adamWeight);
+        let eva = new Human(evaName, "Nữ", evaWeight);
+
+        log("=== BẮT ĐẦU CÂU CHUYỆN ===");
+        adam.info();
+        eva.info();
+        log(`Khối lượng táo ban đầu: ${apple.getWeight()} đơn vị 🍎`);
+        log("<br>--- Adam và Eva bắt đầu ăn ---<br>");
+
+        let turn = 1;
+
+        while (apple.getWeight() > 0) {
+            log(`🔄 Lượt ăn ${turn}`);
+
+            adam.eat(apple);
+            adam.info();
+            adam.checkApple(apple);
+
+            if (apple.getWeight() <= 0) break;
+
+            eva.eat(apple);
+            eva.info();
+            eva.checkApple(apple);
+
+            turn++;
+            log("<br>");
+        }
+
+        log("<br>🍏 Táo đã hết! 💀");
+        log("=== KẾT THÚC ===");
+    }
 </script>
+
 </body>
 </html>
