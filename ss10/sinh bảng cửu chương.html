@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <title>Bảng cửu chương</title>
+</head>
+<body>
+
+<h1>Bảng cửu chương</h1>
+
+<table id="bang"></table>
+
+<script>
+    let table = document.getElementById("bang");
+
+    // 2 vòng lặp lồng nhau tạo bảng 10x10
+    for (let i = 1; i <= 10; i++) {
+        let row = "<tr>";   // bắt đầu 1 hàng
+
+        for (let j = 1; j <= 10; j++) {
+            row += `<td>${j}*${i}=${j*i}</td>`;
+        }
+
+        row += "</tr>";     // kết thúc hàng
+        table.innerHTML += row;
+    }
+</script>
+
+</body>
+</html>
