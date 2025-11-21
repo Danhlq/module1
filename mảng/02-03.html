@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mang = ['a', '1', 'b', '9', 'x', '0', 'k', '3'];
+    let kichThuoc = mang.length;
+
+    let count = 0;
+
+    for (let i = 0; i < kichThuoc; i++) {
+        if (mang[i] >= '0' && mang[i] <= '9') {
+            count++;
+        }
+    }
+
+    console.log("Số ký tự số trong mảng là: " + count);
+</script>
+</body>
+</html>
