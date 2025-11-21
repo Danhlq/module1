@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm ký tự trong mảng</title>
+</head>
+<body>
+
+
+<p id="ketqua"></p>
+
+<script>
+    function demKyTu(mang, kyTu) {
+        let count = 0;
+
+        for (let i = 0; i < mang.length; i++) {
+            if (mang[i] === kyTu) {
+                count++;
+            }
+        }
+
+        // Nếu không có lần xuất hiện nào → trả về -1
+        return count > 0 ? count : -1;
+    }
+</script>
+</body>
+</html>

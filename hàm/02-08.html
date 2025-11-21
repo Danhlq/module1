@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đảo ngược mảng</title>
+</head>
+<body>
+<script>
+    let mang = [23,45,76,87,90,34,56,342,234,86,13,356];
+
+    function daoNguocMang(arr) {
+        let result = [];
+        for (let i = arr.length - 1; i >= 0; i--) {
+            result.push(arr[i]);
+        }
+        return result;
+    }
+
+    console.log(daoNguocMang(mang));
+</script>
+</body>
+</html>

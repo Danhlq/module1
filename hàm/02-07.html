@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đổi chỗ 2 số nguyên</title>
+</head>
+<body>
+<input id = "nhập" a placeholder="nhập 2 số nguyên">
+<button onclick="doiCho">đổi chỗ nào</button>
+<p id = "dadoi"></p>
+<script>
+    function doiCho(a, b) {
+
+        let temp = a;
+        a = b;
+        b = temp;
+
+        return [a, b];
+    }
+    document.getElementById('dadoi').innerText = doiCho;
+</script>
+</body>
+</html>
