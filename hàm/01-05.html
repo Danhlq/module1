@@ -17,15 +17,14 @@
     // Hàm tìm chòm sao theo tên ngôi sao
     function timChomSao(tenSao) {
         for (let i = 0; i < ngoiSao.length; i++) {
-            if (ngoiSao[i].toLowerCase() === tenSao.toLowerCase()) {
-                // So sánh không phân biệt chữ hoa/chữ thường
+            if (ngoiSao === tenSao
+
                 return chomSao[i];
             }
         }
-        return null; // Không tìm thấy
+        return null;
     }
 
-    // Hộp thoại nhập tên ngôi sao
     let tenNguoiDung = prompt("Nhập tên ngôi sao:");
 
     // Gọi hàm tìm chòm sao
